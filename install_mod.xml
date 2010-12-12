@@ -19,7 +19,7 @@
 				<homepage>http://testforum.vilden.se</homepage>
 			</author>
 		</author-group>
-		<mod-version>1.0.6</mod-version>
+		<mod-version>1.0.7</mod-version>
 		<installation>
 			<level>easy</level>
 			<time>1800</time>
@@ -29,6 +29,13 @@
 			<link type="template" lang="en-gb" href="./contrib/subsilver2.xml">Instructions for subsilver2 style</link>
 		</link-group>
 		<history>
+			<entry>
+				<date>2008-12-25</date>
+				<rev-version>1.0.7</rev-version>
+				<changelog lang="en-gb">
+					<change>Some bug fixes</change>
+				</changelog>
+			</entry>
 			<entry>
 				<date>2008-12-16</date>
 				<rev-version>1.0.6</rev-version>

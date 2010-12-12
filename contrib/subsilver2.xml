@@ -18,7 +18,7 @@
 				<homepage>http://testforum.vilden.se</homepage>
 			</author>
 		</author-group>
-		<mod-version>1.0.6</mod-version>
+		<mod-version>1.0.7</mod-version>
 		<installation>
 			<level>easy</level>
 			<time>1800</time>
@@ -39,11 +39,10 @@
 		</open>
 		<open src="styles/subsilver2/template/forumlist_body.html">
 			<edit>
-				<find><![CDATA[			<td class="row1" width="50" align="center">{forumrow.FORUM_FOLDER_IMG}</td>
-			<td class="row1">]]></find>
+				<find><![CDATA[			<td class="row1">
+				<!-- IF forumrow.FORUM_IMAGE -->]]></find>
 				<inline-edit>
-					<inline-find><![CDATA[</td>
-			<td class="row1]]></inline-find>
+					<inline-find><![CDATA[<td class="row1]]></inline-find>
 					<inline-action type="after-add"><![CDATA[ clickable]]></inline-action>
 				</inline-edit>
 				<inline-edit>
