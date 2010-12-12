@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <?xml-stylesheet type="text/xsl" href="./xsl/modx.prosilver.en.xsl"?>
-<!-- 
+<!--
 	NOTICE: Please open this file in your web browser. If presented with a security warning, you may safely tell it to allow the blocked content.
 -->
 <!--For security purposes, please check: http://www.phpbb.com/mods/ for the latest version of this MOD. Although MODs are checked before being allowed in the MODs Database there is no guarantee that there are no security problems within the MOD. No support will be given for MODs not found within the MODs Database which can be found at http://www.phpbb.com/mods/-->
@@ -18,7 +18,7 @@
 				<homepage>http://testforum.vilden.se</homepage>
 			</author>
 		</author-group>
-		<mod-version>1.0.7</mod-version>
+		<mod-version>1.0.8</mod-version>
 		<installation>
 			<level>easy</level>
 			<time>1800</time>
@@ -347,8 +347,8 @@
 					<inline-action type="after-add"><![CDATA[ clickable]]></inline-action>
 				</inline-edit>
 				<inline-edit>
-					<inline-find><![CDATA["]]></inline-find>
-					<inline-action type="after-add"><![CDATA[ onclick="window.location.href='<!-- IF searchresults.S_UNREAD_TOPIC -->{searchresults.U_NEWEST_POST}<!-- ELSE -->{searchresults.U_LAST_POST}<!-- ENDIF -->'"]]></inline-action>
+					<inline-find><![CDATA[">]]></inline-find>
+					<inline-action type="replace-with"><![CDATA[" onclick="window.location.href='<!-- IF searchresults.S_UNREAD_TOPIC -->{searchresults.U_NEWEST_POST}<!-- ELSE -->{searchresults.U_LAST_POST}<!-- ENDIF -->'">]]></inline-action>
 				</inline-edit>
 			</edit>
 		</open>
@@ -460,15 +460,16 @@
 		</open>
 		<open src="styles/subsilver2/template/viewforum_body.html">
 			<edit>
-				<find><![CDATA[<td class="row1">
-					<!-- IF topicrow.S_UNREAD_TOPIC --><a href="{topicrow.U_NEWEST_POST}">]]></find>
+				<find><![CDATA[				<td class="row1">
+					<!-- IF topicrow.S_UNREAD_TOPIC --><a href="{topicrow.U_NEWEST_POST}">{NEWEST_POST_IMG}</a><!-- ENDIF -->
+					{topicrow.ATTACH_ICON_IMG} <!-- IF topicrow.S_HAS_POLL or topicrow.S_TOPIC_MOVED --><b>{topicrow.TOPIC_TYPE}</b> <!-- ENDIF --><a title="{L_POSTED}: {topicrow.FIRST_POST_TIME}" href="{topicrow.U_VIEW_TOPIC}" class="topictitle">{topicrow.TOPIC_TITLE}</a>]]></find>
 				<inline-edit>
 					<inline-find><![CDATA[class="row1]]></inline-find>
 					<inline-action type="after-add"><![CDATA[ clickable]]></inline-action>
 				</inline-edit>
 				<inline-edit>
-					<inline-find><![CDATA["]]></inline-find>
-					<inline-action type="after-add"><![CDATA[ onclick="window.location.href='<!-- IF topicrow.S_UNREAD_TOPIC -->{topicrow.U_NEWEST_POST}<!-- ELSE -->{topicrow.U_LAST_POST}<!-- ENDIF -->'"]]></inline-action>
+					<inline-find><![CDATA[">]]></inline-find>
+					<inline-action type="replace-with"><![CDATA[" onclick="window.location.href='<!-- IF topicrow.S_UNREAD_TOPIC -->{topicrow.U_NEWEST_POST}<!-- ELSE -->{topicrow.U_LAST_POST}<!-- ENDIF -->'">]]></inline-action>
 				</inline-edit>
 			</edit>
 		</open>
